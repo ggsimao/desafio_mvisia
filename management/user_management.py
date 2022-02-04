@@ -16,6 +16,9 @@ def get_db():
 def init_db() -> None:
     db = get_db()
 
+    if not os.path.exists("./db/images"):
+        os.mkdir("./db/images")
+
     with current_app.open_resource("./db/schemas/schema_users.sql") as f:
         db.executescript(f.read().decode("utf8"))
 
