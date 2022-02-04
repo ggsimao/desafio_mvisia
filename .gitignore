@@ -1,0 +1,5 @@
+.git
+*/__pycache__
+flask_session
+images/*
+*.db

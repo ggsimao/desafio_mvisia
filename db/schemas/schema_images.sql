@@ -1,0 +1,13 @@
+CREATE TABLE images (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  name UNIQUE NOT NULL,
+  encoded_image TEXT NOT NULL,
+  thumbnail TEXT NOT NULL
+);
+
+CREATE TABLE labels (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  name TEXT UNIQUE NOT NULL,
+  image_id INTEGER NOT NULL,
+  FOREIGN KEY(image_id) REFERENCES images(id)
+);
